@@ -1,5 +1,5 @@
 const myPromise = new Promise ((resolve, reject) => {
-    let connection = true; // api
+    let connection = false; // api
 
     if(connection){
         resolve('Verbindung steht');
@@ -9,5 +9,7 @@ const myPromise = new Promise ((resolve, reject) => {
 });
 
 myPromise.then((message) => {
+    console.log(message);
+}).catch((message) => {
     console.log(message);
 });
