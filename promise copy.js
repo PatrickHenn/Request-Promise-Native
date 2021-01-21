@@ -1,47 +1,4 @@
 var rp = require('request-promise');
-/*
-//viban Secret  authorization 
-let viban = {
-    method: 'POST',
-    uri: 'https://ltb238.staging.nx.bezahl.de/transaction/add',
-    headers: {
-        'Content-Type' : 'application/json',
-
-        'NX-Token' : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJKLVNldDc0UCIsImVtYWlsIjoicGF0cmljay5oZW5uQG54LXRlY2hub2xvZ2llcy5jb20iLCJ1dWlkIjoiY2NiM2YyMDEtNzlhZS00ZjQzLTgzODEtOGFhNjU4MDc3MzYxIiwiaWF0IjoxNTk3MzIzODU3LCJleHAiOjE3MjM1NTQyNTd9.bSK6bxk6IWnj26HRTJbxMF_r24WsfE5qfJ7Q_5ptiBM'
-    },
-    body: {
-        "type": "CRDT",
-        "account": "DEV-1",
-        "status": "BOOK",
-        "settled": true,
-        "reference": "viban test code",
-        "bookingDate": "2021-01-20",
-        "valutaDate": "2021-01-20",
-        "debitorName": "Wolken Einhorn",
-        "debitorIban": "AL90208110080000001039531801",
-        "debitorBic": "INGDDEFFXXX",
-        "creditorName": "{Autohaus Beispiel GmbH}",
-        "creditorIban": "DE40207300345588010475",
-        "creditorBic": "INGDDEFFXXX",
-        "amount": 200000,
-        "iban": "DE40207300345588010475"	
-    },
-    json: true // Automatically parses the JSON string in the response
-};
-
-
-rp(viban)
-    .then(function (vibanResponse) {
-        console.log('viban created', vibanResponse);
-    })
-    .catch(function (err) {
-        console.log('Mission failed',err);// API call failed...
-    });
-    */
-
-
-
-
    /*
 //401 kein zugriff auf diesse funktion
 let addNewOrderWithPaymentplan = {
@@ -148,28 +105,5 @@ rp(deletDuedateOfOrder)
         console.log('Mission failed',err);// API call failed...
     });
     404
-    
-
-
-//vorlage
-   let  = {
-    method: 'POST',
-    uri: 'https://api.dev.nx.bezahl.de/nxt/v1/order/',
-    headers: {
-        'Content-Type' : 'application/json',
-
-        'NX-Token' : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJKLVNldDc0UCIsImVtYWlsIjoicGF0cmljay5oZW5uQG54LXRlY2hub2xvZ2llcy5jb20iLCJ1dWlkIjoiY2NiM2YyMDEtNzlhZS00ZjQzLTgzODEtOGFhNjU4MDc3MzYxIiwiaWF0IjoxNTk3MzIzODU3LCJleHAiOjE3MjM1NTQyNTd9.bSK6bxk6IWnj26HRTJbxMF_r24WsfE5qfJ7Q_5ptiBM'
-    },
-    body: 
-    json: true // Automatically parses the JSON string in the response
-};
-
-
-rp()
-    .then(function (Response) {
-        console.log( Response);
-    })
-    .catch(function (err) {
-        console.log('Mission failed',err);// API call failed...
-    });
+  
     */

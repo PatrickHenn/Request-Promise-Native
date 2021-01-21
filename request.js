@@ -18,7 +18,10 @@ function get(uri){
     return request({
     method: 'GET',
     ...option,
-    uri/*: '${endpoint}${uri}'*/,
+    qs:{
+        'link':'true'
+    },
+    uri: `${endpoint}${uri}`,
     });
 };
 
@@ -27,7 +30,10 @@ function post(uri,body){
     return request({
     method: 'POST',
     ...option,
-    uri:'${endpoint}${uri}',
+    qs:{
+        'link':'true'
+    },
+    uri:`${endpoint}${uri}`,
     body,
     });
 };
