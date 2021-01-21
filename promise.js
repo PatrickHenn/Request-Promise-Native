@@ -1,4 +1,4 @@
-var rp = require('request-promise');
+const rp = require('request-promise');
 
 let getUser = {
     method: 'GET',
@@ -22,25 +22,25 @@ rp(getUser)
 
 
 
-    let getWebhookList = {
-        method: 'GET',
-        uri: 'https://api.dev.nx.bezahl.de/nxt/v1/webhook?orgId=Hgza28rQ-',
-        headers: {
-            'Content-Type' : 'application/json',
-    
-            'NX-Token' : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJKLVNldDc0UCIsImVtYWlsIjoicGF0cmljay5oZW5uQG54LXRlY2hub2xvZ2llcy5jb20iLCJ1dWlkIjoiY2NiM2YyMDEtNzlhZS00ZjQzLTgzODEtOGFhNjU4MDc3MzYxIiwiaWF0IjoxNTk3MzIzODU3LCJleHAiOjE3MjM1NTQyNTd9.bSK6bxk6IWnj26HRTJbxMF_r24WsfE5qfJ7Q_5ptiBM'
-        },
-        json: true // Automatically parses the JSON string in the response
-    };
-    
-    
-    rp(getWebhookList)
-        .then(function (getWebhookListResponse) {
-            console.log('Webhook List is', getWebhookListResponse);
-        })
-        .catch(function (err) {
-            console.log('Mission failed',err);// API call failed...
-        });
+let getWebhookList = {
+    method: 'GET',
+    uri: 'https://api.dev.nx.bezahl.de/nxt/v1/webhook?orgId=Hgza28rQ-',
+    headers: {
+        'Content-Type' : 'application/json',
+
+        'NX-Token' : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJKLVNldDc0UCIsImVtYWlsIjoicGF0cmljay5oZW5uQG54LXRlY2hub2xvZ2llcy5jb20iLCJ1dWlkIjoiY2NiM2YyMDEtNzlhZS00ZjQzLTgzODEtOGFhNjU4MDc3MzYxIiwiaWF0IjoxNTk3MzIzODU3LCJleHAiOjE3MjM1NTQyNTd9.bSK6bxk6IWnj26HRTJbxMF_r24WsfE5qfJ7Q_5ptiBM'
+    },
+    json: true // Automatically parses the JSON string in the response
+};
+
+
+rp(getWebhookList)
+    .then(function (getWebhookListResponse) {
+        console.log('Webhook List is', getWebhookListResponse);
+    })
+    .catch(function (err) {
+        console.log('Mission failed',err);// API call failed...
+    });
 
 
 let postWebhook = {
@@ -629,3 +629,5 @@ rp(archiveAndCloseOrder)
     .catch(function (err) {
         console.log('Mission failed',err);// API call failed...
     });
+
+

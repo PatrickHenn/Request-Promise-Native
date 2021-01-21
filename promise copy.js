@@ -60,8 +60,6 @@ let addNewOrderWithPaymentplan = {
           "pickupdate": "2021-01-24",
           "contactperson": "user@example.com",
           "recipient": "user@example.com",
-          "reminder": "disabled",
-          "unique": "string",
           "uniquemodus": "error",
           "metafields": [
             {
@@ -119,6 +117,57 @@ let addNewOrderWithPaymentplan = {
 rp(addNewOrderWithPaymentplan)
     .then(function (addNewOrderWithPaymentplanResponse) {
         console.log('This is the Organisation', addNewOrderWithPaymentplanResponse);
+    })
+    .catch(function (err) {
+        console.log('Mission failed',err);// API call failed...
+    });
+
+
+
+       let deletDuedateOfOrder = {
+    method: 'POST',
+    uri: 'https://api.dev.nx.bezahl.de/nxt/v1/order/4l1iHX8YV/update/duedate/delete',
+    headers: {
+        'Content-Type' : 'application/json',
+
+        'NX-Token' : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJKLVNldDc0UCIsImVtYWlsIjoicGF0cmljay5oZW5uQG54LXRlY2hub2xvZ2llcy5jb20iLCJ1dWlkIjoiY2NiM2YyMDEtNzlhZS00ZjQzLTgzODEtOGFhNjU4MDc3MzYxIiwiaWF0IjoxNTk3MzIzODU3LCJleHAiOjE3MjM1NTQyNTd9.bSK6bxk6IWnj26HRTJbxMF_r24WsfE5qfJ7Q_5ptiBM'
+    },
+    body: {
+        "responsekey": "order.duedate.delete.success",
+        "responsemessage": "Erfolgreich gespeichert"
+      },
+    json: true // Automatically parses the JSON string in the response
+};
+
+
+rp(deletDuedateOfOrder)
+    .then(function (deletDuedateOfOrderResponse) {
+        console.log('Ok',deletDuedateOfOrderResponse);
+    })
+    .catch(function (err) {
+        console.log('Mission failed',err);// API call failed...
+    });
+    404
+    
+
+
+//vorlage
+   let  = {
+    method: 'POST',
+    uri: 'https://api.dev.nx.bezahl.de/nxt/v1/order/',
+    headers: {
+        'Content-Type' : 'application/json',
+
+        'NX-Token' : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJKLVNldDc0UCIsImVtYWlsIjoicGF0cmljay5oZW5uQG54LXRlY2hub2xvZ2llcy5jb20iLCJ1dWlkIjoiY2NiM2YyMDEtNzlhZS00ZjQzLTgzODEtOGFhNjU4MDc3MzYxIiwiaWF0IjoxNTk3MzIzODU3LCJleHAiOjE3MjM1NTQyNTd9.bSK6bxk6IWnj26HRTJbxMF_r24WsfE5qfJ7Q_5ptiBM'
+    },
+    body: 
+    json: true // Automatically parses the JSON string in the response
+};
+
+
+rp()
+    .then(function (Response) {
+        console.log( Response);
     })
     .catch(function (err) {
         console.log('Mission failed',err);// API call failed...
