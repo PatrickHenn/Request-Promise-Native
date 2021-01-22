@@ -1,12 +1,12 @@
-const {post,get} = require('./lib/request.js');
+const {post,get,del} = require('./lib/request.js');
 const orgaId = 'Hgza28rQ-';
-const orderId = 'ryLwAq0AT';
+const orderId = '7HfFzusar';
 
-
+/*
 //add order
 post('order/',
 {
-    "orgId": `{orgaId}`,
+    "orgId": `${orgaId}`,
     "name": "test lol",
     "price": 209555
   }
@@ -15,78 +15,81 @@ post('order/',
 //paymentplan
 post('order/plan',
 {
-    "orgId": "string",
+    "orgId": `${orgaId}`,
     "order": {
-      "name": "string",
-      "price": 0,
-      "pickupdate": "2019-08-24",
-      "contactperson": "user@example.com",
-      "recipient": "user@example.com",
+      "name": "Coding test",
+      "price": 40400,
+      "pickupdate": "2021-01-23",
+      "contactperson": "patrick.henn+code@nx-technologies.com",
+      "recipient": "patrick.henn+code@nx-technologies.com",
       "reminder": "disabled",
-      "unique": "string",
-      "uniquemodus": "error",
-      "metafields": [
-        {
-          "type": "string",
-          "desc": "string"
-        }
-      ],
-      "customer": {
-        "id": "string",
-        "company": "string",
-        "firstname": "string",
-        "lastname": "string",
-        "street": "string",
-        "streetnumber": "string",
-        "zip": "string",
-        "city": "string",
-        "country": "string",
-        "email": "string",
-        "phone": "string"
+      "paymentoptions": {
+  
+        "cash": false,
+        "sepa": false,
+        "fts": true },
+        "metafields": [
+          {
+            "type": "string",
+            "desc": "Test"
+          }
+        ],
+        "customer": {
+          "id": "string",
+          "company": "CarRent",
+          "firstname": "Max",
+          "lastname": "Reiner",
+          "street": "Am Rosenberg",
+          "streetnumber": "41",
+          "zip": "51101",
+          "city": "Köln",
+          "country": "Deutschland",
+          "email": "example@mail.com",
+          "phone": "0123 1234567"
+        },
+        "invoice": [
+          {
+            "desc": "string",
+            "invoice": "dev_test",
+            "debitor": "Herr Lang",
+            "name": "string",
+            "amount": 20000,
+            "duedate": "2021-01-25"
+          }
+        ],
+        "draft": false,
+        "tags": [
+          "string"
+        ]
       },
-      "invoice": [
+      "assets": [
         {
-          "desc": "string",
-          "invoiceNo": "string",
-          "debitor": "string",
-          "name": "string",
-          "amount": 0,
-          "duedate": "2019-08-24"
+          "label": "Zusatz",
+          "amount": 100000
         }
       ],
-      "draft": false,
-      "tags": [
-        "string"
+      "payments": [
+        {
+          "label": "Vorzahlung",
+          "amount": 200000,
+          "confirmed": true,
+          "received": true
+        }
       ]
-    },
-    "assets": [
-      {
-        "label": "string",
-        "amount": 0
-      }
-    ],
-    "payments": [
-      {
-        "label": "string",
-        "amount": 0,
-        "confirmed": true,
-        "received": true
-      }
-    ]
-  }
+    }
 ).then(console.log);
 
 //entwurf
 post('order',
 {
-    "orgId": "Hgza28rQ-",
-    "name": "Entwurf über Postman1",
+    "orgId": `${orgaId}`,
+    "name": "Entwurf über Code",
     "attachment": "",
     "draft": true,
     "assets": [
         {
             "label": "Kaufpreis",
-            "amount": 2000000
+            "amount": 900000
         },
         {
             "label": "Sportreifen, MB",
@@ -96,13 +99,13 @@ post('order',
     "payments": [
         {
             "label": "Inzahlungnahme",
-            "amount": 800000,
+            "amount": 200000,
             "confirmed": false,
             "received": true
         },
         {
             "label": "Finanzierung",
-            "amount": 250000,
+            "amount": 49999,
             "confirmed": true,
             "received": true
         }
@@ -111,8 +114,8 @@ post('order',
         "fts": true
     },
     "reminder": "7d",
-    "pickupdate": "2020-10-30",
-    "duedate": "2023-10-30",
+    "pickupdate": "2021-02-20",
+    "duedate": "2021-10-30",
     "pickupWithoutPayment": true,
     "recipient": "patrick.henn+1@nx-technologies.com",
     "contactperson": "patrick.henn@nx-technologies.com",
@@ -181,7 +184,7 @@ post(`order/${orderId}/recipient`,
     "recipient": 
 
     {
-        "email": "patrick.henn+87@nx-technologies.com"
+        "email": "patrick.henn+codingRecipient@nx-technologies.com"
     }
 
 }   
@@ -190,7 +193,7 @@ post(`order/${orderId}/recipient`,
 //remove recipient
 post(`order/${orderId}/recipient/delete`,
 {
-    "email": "patrick.henn+87@nx-technologies.com"
+    "email": "patrick.henn+codingRecipient@nx-technologies.com"
   
 }
 ).then(console.log);
@@ -211,27 +214,27 @@ post(`order/${orderId}/update/price`,
 //update name of order 
 post(`order/${orderId}/update/name`,
 {
-    "name": "änderung test"
+    "name": "änderung coding test"
   }
 ).then(console.log);
 
 //update contactperson of order 
 post(`order/${orderId}/update/contactperson`,
 {
-    "contactperson": "patrick.henn+13@nx-technologies.com",
+    "contactperson": "patrick.henn+updatecontactperson@nx-technologies.com",
     "orgId": `${orgaId}`
   }
-).then(console.log);
+).then(console.log);    
 
 //add or update duedate of order 
 post(`order/${orderId}/update/duedate`,
 {
-    "duedate": "2020-08-24"
+    "duedate": "2021-08-24"
   }
 ).then(console.log);
 
 //delete duedate of order 
-post(`order/${orderId}/update/duedate/delete`,
+post(`order/${orderId}/duedate/delete`,
 {
     "responsekey": "order.duedate.delete.success",
     "responsemessage": "Erfolgreich gespeichert"
@@ -241,7 +244,7 @@ post(`order/${orderId}/update/duedate/delete`,
 //add or update pickupdate of order 
 post(`order/${orderId}/update/pickupdate/`,
 {
-    "pickupdate": "2020-09-24"
+    "pickupdate": "2021-09-24"
   }
 ).then(console.log);
 
@@ -311,18 +314,21 @@ post('organization',
 ).then(console.log);
 
 
-
+*/
 //webhook
-get('webhook?orgId=Hgza28rQ-').then(console.log);
+//get(`webhook?orgId=${orgaId}`).then(console.log);
 
-post('webhook?orgId=Hgza28rQ-',
+post(`webhook?orgId=${orgaId}`,
 {
-    "orgId": "Hgza28rQ-",
-    "url": "https://api.dev.nx.bezahl.de/nxt/v1/webhook?orgId=Hgza28rQ-",
+    "orgId": `${orgaId}`,
+    "url": `https://api.dev.nx.bezahl.de/nxt/v1/webhook?orgId=${orgaId}`,
     "secret": "string"
   }
 ).then(console.log);
 
-/*del('',
-
-).then(console.log);*/
+del(`webhook?orgId=${orgaId}`,
+{
+    "orgId": `${orgaId}`,
+    "id": `7nB3ZDB7q`
+  }
+).then(console.log);
