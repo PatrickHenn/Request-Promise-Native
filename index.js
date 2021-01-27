@@ -1,4 +1,5 @@
 const {post,get,del} = require('./lib/request.js');
+require('dotenv').config();
 const orgaId = 'TqUnGlyJc'; //dev:'Hgza28rQ-'
 const orderId = '7HfFzusar';
 
