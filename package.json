@@ -1,0 +1,30 @@
+{
+  "name": "request-promise-native",
+  "version": "1.0.0",
+  "description": "API test",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "request-promise": "^4.2.6",
+    "request-promise-native": "^1.0.9",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "STACK=dev nodemon",
+    "test": "STACK=test nodemon",
+    "int": "STACK=int nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatrickHenn/Request-Promise-Native.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PatrickHenn/Request-Promise-Native/issues"
+  },
+  "homepage": "https://github.com/PatrickHenn/Request-Promise-Native#readme"
+}

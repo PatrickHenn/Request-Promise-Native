@@ -1,8 +1,8 @@
 const {post,get,del} = require('./lib/request.js');
-const orgaId = 'Hgza28rQ-';
+const orgaId = 'TqUnGlyJc'; //dev:'Hgza28rQ-'
 const orderId = '7HfFzusar';
 
-/*
+
 //add order
 post('order/',
 {
@@ -11,12 +11,12 @@ post('order/',
     "price": 209555
   }
 ).then(console.log);
-
+/*
 //paymentplan
 post('order/plan',
 {
     "orgId": `${orgaId}`,
-    "order": {
+    "order": {  
       "name": "Coding test",
       "price": 40400,
       "pickupdate": "2021-01-23",
@@ -314,9 +314,9 @@ post('organization',
 ).then(console.log);
 
 
-*/
+
 //webhook
-//get(`webhook?orgId=${orgaId}`).then(console.log);
+get(`webhook?orgId=${orgaId}`).then(console.log);
 
 post(`webhook?orgId=${orgaId}`,
 {
@@ -325,10 +325,10 @@ post(`webhook?orgId=${orgaId}`,
     "secret": "string"
   }
 ).then(console.log);
-
+/*
 del(`webhook?orgId=${orgaId}`,
 {
     "orgId": `${orgaId}`,
     "id": `7nB3ZDB7q`
   }
-).then(console.log);
+).then(console.log);*/
