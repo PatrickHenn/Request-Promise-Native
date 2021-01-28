@@ -1,6 +1,6 @@
-const {post,get,del} = require('./lib/request.js');
 require('dotenv').config();
-const orgaId = 'TqUnGlyJc'; //dev:'Hgza28rQ-'
+const {post,get,del,orgaId} = require('./lib/request.js');
+//orgaId = 'Hgza28rQ-'; //dev:'Hgza28rQ-' int:'TqUnGlyJc'
 const orderId = '7HfFzusar';
 
 
